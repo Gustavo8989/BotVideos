@@ -13,7 +13,7 @@ BUCKET_NAME = "filevideosbot"
 FILE_PATH = "filevideosbot"
 S3_OBJECT_NAME = "Minecraft Parkour Gameplay No Copyright.mp4"
 
-video = VideoFileClip("video1.mp4")
+video = VideoFileClip("Minecraft Parkour Gameplay No Copyright.mp4")
 duracao = video.duration
 começo = 0 
 audio_final = AudioFileClip("3 fatos sobre o mar.mp3")
