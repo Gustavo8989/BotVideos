@@ -1,12 +1,11 @@
 # Importar as bibliotecas 
 from dotenv import load_dotenv
 from elevenlabs import VoiceSettings
+from pysrt import SubRipFile, SubRipItem, SubRipTime
 from elevenlabs.client import ElevenLabs
 import assemblyai as aii 
 import cohere
 import boto3
-import os 
-import uuid 
 
 # Pegar a cheve APi
 # MUDAR ISSO DEPOIS para .env
@@ -17,17 +16,13 @@ with open("key_voice.txt", 'r') as voice:
 with open("key_aii.txt",'r') as legend:
     legend = legend.read()
 
-'''load_dotenv(dotenv_path="bot_criar_videos/.env")
-key = os.getenv("API_KEY_COHERE")
-print(key)
-'''
-
 ELEVENLABS_API_KEY = voice 
 s3 = boto3.client('s3')
 # Conectando com sua chave
 co = cohere.ClientV2(key)
 menssage = [] # Usado para salvar as conversas so usuarios, não esta sendo usado atualmente
-user_input = input("Digite: ")
+user_input = input("Digite o tema do seu texto: ")
+salve = input("Você quer salvar o seu texto? ").lower()
 messages=[{"role": "user", "content": user_input}]
 response = co.chat(
     model="command-a-03-2025", 
@@ -35,6 +30,15 @@ response = co.chat(
 )
 bot_reply = response.message.content[0].text
 menssage.append({"role":"asistant","content":bot_reply})
+text_clear = bot_reply.replace('**','')
+
+# Salvando o texto para transformar em legenda 
+if salve == "sim" or "s":
+    with open("text_legend.txt",'w',encoding='utf-8') as legend:
+        legend.write(text_clear)
+    print("Legenda criada com sucesso.. :)")
+
+print("Transformando em audio...")
 
 # Parte da voz
 elevenLabs = ElevenLabs(
@@ -64,5 +68,3 @@ def text_to_speech(text:str) -> str:
     S3_OBJECT_NAME = save_file_path
     response = s3.list_buckets()
     s3.upload_file(FILE_PATH,BUCKET_NAME,S3_OBJECT_NAME)
-
-text_to_speech()

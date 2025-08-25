@@ -9,12 +9,12 @@ file_name_audio = input("Digite o nome do audio? ")
 s3 = boto3.client('s3')
 
 BUCKET_NAME_AUDIO = "fileaudiobot"
-FILE_PATH_AUDIO = file_name_audio
-S3_OBJECT_NAME_AUDIO = file_name_audio
+FILE_PATH_AUDIO = "3 fatos sobre o mar.mp3"
+S3_OBJECT_NAME_AUDIO = "3 fatos sobre o mar.mp3"
 
 BUCKET_NAME_VIDEO = "filevideosbot"
-FILE_PATH_VIDEO = file_name_video
-S3_OBJECT_NAME_VIDEO = file_name_video
+FILE_PATH_VIDEO = "corte_final.mp4"
+S3_OBJECT_NAME_VIDEO = "corte_final.mp4"
 
 question = input("Quer fazer Download e Upload [D/U]: ")
 
