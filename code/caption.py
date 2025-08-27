@@ -11,6 +11,8 @@ duracao = 5
 legenda = []
 duracao_video = video.duration
 
+def size_caption(largura:40):
+    return None
 
 with open('text_legend.txt','r',encoding='utf-8') as text_clear:
     text_clear = text_clear.read().splitlines()
@@ -27,22 +29,19 @@ for i,frase in enumerate(text_clear,start=1):
     sub.append(legend)
     tempo_inicial += duracao
 
-# Melhorar o código 
-range_numeros = [c for c in enumerate(sub)]
-range_numeros = [i for i in range(len(range_numeros) - 1)]
 
-
-
-for c in range_numeros:
+for texto in sub:
     txt_clip = (TextClip(
                 font=None,
-                text=sub[c].text,
+                text=texto.text,
                 color="Orange",
                 font_size = 25,
-                method='label')).with_position(("center","bottom")).with_duration(duracao_video)
+                method='label')
+                ).with_position(("center")).with_start(texto.start.seconds).with_duration(texto.end.seconds - texto.start.seconds)
 
 video_final = CompositeVideoClip([video,txt_clip])
 video_final.write_videofile("Teste videos com legenda.mp4",codec="libx264")
 
 
-# https://json2video.com/
+
+#xlTUwuVtqUOkL6gVAQCvZGXMmhZ16shAZXFfFpGe

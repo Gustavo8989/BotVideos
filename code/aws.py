@@ -8,10 +8,12 @@ file_name_audio = input("Digite o nome do audio? ")
 
 s3 = boto3.client('s3')
 
+# Bucket Audio
 BUCKET_NAME_AUDIO = "fileaudiobot"
 FILE_PATH_AUDIO = "3 fatos sobre o mar.mp3"
 S3_OBJECT_NAME_AUDIO = "3 fatos sobre o mar.mp3"
 
+#Bucket Video
 BUCKET_NAME_VIDEO = "filevideosbot"
 FILE_PATH_VIDEO = "corte_final.mp4"
 S3_OBJECT_NAME_VIDEO = "corte_final.mp4"

@@ -29,7 +29,6 @@ response = co.chat(
     messages=messages
 )
 bot_reply = response.message.content[0].text
-menssage.append({"role":"asistant","content":bot_reply})
 text_clear = bot_reply.replace('**','')
 
 # Salvando o texto para transformar em legenda 
