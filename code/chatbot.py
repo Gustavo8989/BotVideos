@@ -18,7 +18,7 @@ with open("key_aii.txt",'r') as legend:
 
 ELEVENLABS_API_KEY = voice 
 s3 = boto3.client('s3')
-# Conectando com sua chave
+# Conectando com a chave
 co = cohere.ClientV2(key)
 menssage = [] # Usado para salvar as conversas so usuarios, não esta sendo usado atualmente
 user_input = input("Digite o tema do seu texto: ")

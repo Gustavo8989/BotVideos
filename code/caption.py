@@ -11,8 +11,7 @@ duracao = 5
 legenda = []
 duracao_video = video.duration
 
-def size_caption(largura:40):
-    return None
+
 
 with open('text_legend.txt','r',encoding='utf-8') as text_clear:
     text_clear = text_clear.read().splitlines()
@@ -41,7 +40,5 @@ for texto in sub:
 
 video_final = CompositeVideoClip([video,txt_clip])
 video_final.write_videofile("Teste videos com legenda.mp4",codec="libx264")
-
-
 
 #xlTUwuVtqUOkL6gVAQCvZGXMmhZ16shAZXFfFpGe
