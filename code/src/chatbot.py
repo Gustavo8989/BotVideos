@@ -16,9 +16,11 @@ with open("key_voice.txt", 'r') as voice:
 with open("key_aii.txt",'r') as legend:
     legend = legend.read()
 
+# API da Voz 
 ELEVENLABS_API_KEY = voice 
-s3 = boto3.client('s3')
+s3 = boto3.client('s3') # AWS
 # Conectando com a chave
+
 co = cohere.ClientV2(key)
 menssage = [] # Usado para salvar as conversas so usuarios, não esta sendo usado atualmente
 user_input = input("Digite o tema do seu texto: ")
@@ -32,11 +34,11 @@ bot_reply = response.message.content[0].text
 text_clear = bot_reply.replace('**','')
 
 # Salvando o texto para transformar em legenda 
-if salve == "sim" or "s":
+if salve == "sim":
     with open("text_legend.txt",'w',encoding='utf-8') as legend:
         legend.write(text_clear)
     print("Legenda criada com sucesso.. :)")
-
+z
 print("Transformando em audio...")
 
 # Parte da voz
@@ -67,3 +69,5 @@ def text_to_speech(text:str) -> str:
     S3_OBJECT_NAME = save_file_path
     response = s3.list_buckets()
     s3.upload_file(FILE_PATH,BUCKET_NAME,S3_OBJECT_NAME)
+
+text_to_speech(text_clear)

@@ -12,7 +12,6 @@ legenda = []
 duracao_video = video.duration
 
 
-
 with open('text_legend.txt','r',encoding='utf-8') as text_clear:
     text_clear = text_clear.read().splitlines()
 

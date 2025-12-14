@@ -1,0 +1,29 @@
+Hidroponia é um método de cultivo de plantas sem o uso de solo, onde as raízes são diretamente nutridas por uma solução aquosa rica em nutrientes essenciais. Esse sistema permite um controle preciso das condições de crescimento, como nutrientes, pH, luz e umidade, otimizando o desenvolvimento das plantas.
+
+### Como funciona a hidroponia?
+1. Solução Nutritiva: As plantas recebem todos os nutrientes necessários (nitrogênio, fósforo, potássio, etc.) dissolvidos em água.
+2. Suporte para Raízes: Em vez de solo, as raízes são sustentadas por meios inertes como fibra de coco, vermiculita, perlita ou lã de rocha.
+3. Sistema de Cultivo: Existem vários sistemas hidroponicos, como:
+   - NFT (Nutrient Film Technique): As raízes são expostas a um fino filme de solução nutritiva que flui continuamente.
+   - Gotejamento: A solução é entregue diretamente às raízes por meio de gotejadores.
+   - Água Profunda (DWC): As raízes ficam submersas em uma solução nutritiva oxigenada.
+   - Areia ou Substrato: As raízes crescem em um meio inerte, como areia ou fibra de coco, que é periodicamente irrigado com a solução.
+
+### Vantagens da hidroponia:
+- Economia de água: Consome até 90% menos água que o cultivo tradicional, pois a solução é reutilizada.
+- Maior produtividade: As plantas crescem mais rápido e produzem mais, pois recebem nutrientes de forma direta e equilibrada.
+- Controle de pragas e doenças: Sem solo, há menos risco de pragas e patógenos.
+- Espaço reduzido: Ideal para áreas urbanas ou locais com solo de baixa qualidade.
+- Sustentabilidade: Reduz o uso de agroquímicos e minimiza o impacto ambiental.
+
+### Desafios da hidroponia:
+- Custo inicial: A instalação de um sistema hidroponico pode ser cara.
+- Conhecimento técnico: Requer monitoramento constante da solução nutritiva (pH, EC, nutrientes).
+- Dependência de energia: Alguns sistemas precisam de eletricidade para bombear a solução.
+
+### Exemplos de plantas cultivadas em hidroponia:
+- Hortaliças: alface, rúcula, espinafre, tomate, pepino.
+- Ervas: manjericão, coentro, hortelã.
+- Frutas: morango, pimentão.
+
+A hidroponia é uma técnica inovadora e eficiente, especialmente em contextos onde o solo ou água são escassos, e tem ganhado popularidade no Brasil e no mundo como uma alternativa sustentável para a agricultura tradicional.
