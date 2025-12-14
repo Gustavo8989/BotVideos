@@ -9,9 +9,7 @@ Logo após o bot pega o conteúdo que esta em texto e transforma em audio
 
 A legenda é feita com o texto original gerado pela LLM 
 
-As imagem da tela ou vai ser gerada por alguma IA ou através do selenium 
-
-O usuário deve colocar o texto na caixa e o video será gerado automaticamente 
+As imagem da tela ou vai ser gerada por alguma IA ou pegando imagem de algum banco de dados através do selenium 
 
 O video ficará armazenado dentro do servidor da AWS 
 
