@@ -17,7 +17,7 @@ def create_video():
     video = VideoFileClip("Minecraft Parkour Gameplay No Copyright.mp4")
     duracao = video.duration
     começo = 0 
-    audio_final = AudioFileClip("3 fatos sobre o mar.mp3")
+    audio_final = AudioFileClip("teste_termo.wav")
     audio = audio_final.duration
     audio = math.ceil(audio)
     final = audio
@@ -35,3 +35,5 @@ def create_video():
             ys.download(filename="video1.mp4")
         except Exception as e:
             print(f"Ocorreu um erro: {e}")
+
+create_video()

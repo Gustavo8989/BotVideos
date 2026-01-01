@@ -38,7 +38,7 @@ if salve == "sim":
     with open("text_legend.txt",'w',encoding='utf-8') as legend:
         legend.write(text_clear)
     print("Legenda criada com sucesso.. :)")
-z
+
 print("Transformando em audio...")
 
 # Parte da voz
@@ -69,5 +69,6 @@ def text_to_speech(text:str) -> str:
     S3_OBJECT_NAME = save_file_path
     response = s3.list_buckets()
     s3.upload_file(FILE_PATH,BUCKET_NAME,S3_OBJECT_NAME)
+    print("Finalizado... ")
 
 text_to_speech(text_clear)

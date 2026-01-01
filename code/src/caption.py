@@ -2,22 +2,28 @@ from moviepy.video.io.VideoFileClip import VideoFileClip
 from moviepy.video.VideoClip import TextClip
 from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip  
 from pysrt import SubRipFile, SubRipItem, SubRipTime
-import openai
-import moviepy
+from pydub import AudioSegment
+import speech_recognition as sr
+import whisper
+
 
 video = VideoFileClip("corte_final.mp4")
 tempo_inicial = 1 
 duracao = 5
 legenda = []
 duracao_video = video.duration
-
-
-with open('text_legend.txt','r',encoding='utf-8') as text_clear:
-    text_clear = text_clear.read().splitlines()
-
+'''
+recognition = sr.Recognizer()
+with sr.AudioFile('teste_termo.wav') as source:
+    audio_data = recognition.record(source)
+    try:
+        texto = recognition.recognize_ibm(audio_data,language='pt-BR')
+    except sr.RequestError as e:
+        print("Erro encontrado {e}")
+'''
 
 sub = SubRipFile()
-for i,frase in enumerate(text_clear,start=1):
+for i,frase in enumerate(texto,start=1):
     legend = SubRipItem(
         index=i,
         start=SubRipTime(0,0,tempo_inicial,0),
@@ -41,3 +47,14 @@ video_final = CompositeVideoClip([video,txt_clip])
 video_final.write_videofile("Teste videos com legenda.mp4",codec="libx264")
 
 #xlTUwuVtqUOkL6gVAQCvZGXMmhZ16shAZXFfFpGe
+
+
+'''     Modelo para legenda
+1
+00:00:01,000 --> 00:00:04,000
+Olá, bem-vindo ao tutorial.
+
+2
+00:00:04,500 --> 00:00:08,000
+Hoje vamos aprender sobre Python.
+'''

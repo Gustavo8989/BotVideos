@@ -15,8 +15,8 @@ S3_OBJECT_NAME_AUDIO = "3 fatos sobre o mar.mp3"
 
 #Bucket Video
 BUCKET_NAME_VIDEO = "filevideosbot"
-FILE_PATH_VIDEO = "corte_final.mp4"
-S3_OBJECT_NAME_VIDEO = "corte_final.mp4"
+FILE_PATH_VIDEO = "Minecraft Parkour Gameplay No Copyright.mp4"
+S3_OBJECT_NAME_VIDEO = "Minecraft Parkour Gameplay No Copyright.mp4"
 
 question = input("Quer fazer Download e Upload [D/U]: ")
 
