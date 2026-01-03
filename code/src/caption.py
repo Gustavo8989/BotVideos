@@ -1,4 +1,5 @@
 from moviepy.video.io.VideoFileClip import VideoFileClip
+
 from moviepy.video.VideoClip import TextClip
 from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip  
 from pysrt import SubRipFile, SubRipItem, SubRipTime
@@ -21,7 +22,6 @@ with sr.AudioFile('teste_termo.wav') as source:
     except sr.RequestError as e:
         print("Erro encontrado {e}")
 '''
-
 sub = SubRipFile()
 for i,frase in enumerate(texto,start=1):
     legend = SubRipItem(
