@@ -16,10 +16,10 @@ r = sr.Recognizer()
 print(texto)'''
 
 
-with open("text_legend.txt",'r') as legend:
+'''with open("text_legend.txt",'r') as legend:
     legend = legend.read() 
 print(legend)
-
+'''
 
 video = VideoFileClip("corte_final.mp4")
 duracao = video.duration
@@ -33,17 +33,8 @@ while duracao > fim:
     fim += 5
 
 
-
-
-total_segundos = int(duracao.total_seconds()) 
-print(total_segundos)
-
-
-
-
-
-
-
+total_legendas = duracao / 5 
+print(total_legendas) 
 
 
 
