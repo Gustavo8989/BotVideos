@@ -13,3 +13,4 @@ As imagem da tela ou vai ser gerada por alguma IA ou pegando imagem de algum ban
 
 O video ficará armazenado dentro do servidor da AWS 
 
+Será gerado um vídeo com gameplay de minecraft de fundo com uma voz de IA e legenda 
