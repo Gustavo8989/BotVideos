@@ -16,10 +16,10 @@ r = sr.Recognizer()
 print(texto)'''
 
 
-'''with open("text_legend.txt",'r') as legend:
+with open("text_legend.txt",'r') as legend:
     legend = legend.read() 
 print(legend)
-'''
+
 
 video = VideoFileClip("corte_final.mp4")
 duracao = video.duration
@@ -35,7 +35,6 @@ while duracao > fim:
 
 total_legendas = duracao / 5 
 print(total_legendas) 
-
 
 
 # Ver quantas palavras a IA consegue "falar" em 5 segundo

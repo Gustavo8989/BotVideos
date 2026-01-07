@@ -24,10 +24,9 @@ s3 = boto3.client('s3') # AWS
 co = cohere.ClientV2(key)
 menssage = [] # Usado para salvar as conversas so usuarios, não esta sendo usado atualmente
 user_input = input("Digite o tema do seu texto: ")
-messages=[{"role": "user", "content": user_input}]
 response = co.chat(
     model="command-a-03-2025", 
-    messages=[{"role":"user", "content":"xbox360"}]
+    messages=[{"role":"user","content":user_input}]
 )
 bot_reply = response.message.content[0].text
 text_clear = bot_reply.replace('**','')
