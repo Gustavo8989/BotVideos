@@ -15,10 +15,12 @@ for item in lista:
     itens_filtrados = re.sub(letras,'',item)
     apenas_letras.append(itens_filtrados)
 
-ponteiro = 13 
+ponteiro = 0
 partes_legenda = [[]] 
-print(len(apenas_letras)//ponteiro)
+print(len(apenas_letras))
 
-while ponteiro <= len(apenas_letras):
-    pronteiro =+ 13
+while len(apenas_letras) > ponteiro:
+    partes_legenda.append(apenas_letras[ponteiro])
+    ponteiro += 13
 
+print(partes_legenda)    
