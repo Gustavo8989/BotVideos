@@ -1,27 +1,26 @@
 from moviepy.video.io.VideoFileClip import VideoFileClip
-
 from moviepy.video.VideoClip import TextClip
 from moviepy.video.compositing.CompositeVideoClip import CompositeVideoClip  
 from pysrt import SubRipFile, SubRipItem, SubRipTime
 from pydub import AudioSegment
 import speech_recognition as sr
 import whisper
-
+import re 
 
 video = VideoFileClip("corte_final.mp4")
 tempo_inicial = 1 
 duracao = 5
 legenda = []
 duracao_video = video.duration
-'''
-recognition = sr.Recognizer()
-with sr.AudioFile('teste_termo.wav') as source:
-    audio_data = recognition.record(source)
-    try:
-        texto = recognition.recognize_ibm(audio_data,language='pt-BR')
-    except sr.RequestError as e:
-        print("Erro encontrado {e}")
-'''
+
+with open('text_legend.txt','r',encoding='utf-8') as text:
+    text = text.read()
+
+lista = text.split()
+letras = r'[^a-zA-Z\u00C0-\u017F]'
+
+
+
 sub = SubRipFile()
 for i,frase in enumerate(texto,start=1):
     legend = SubRipItem(
