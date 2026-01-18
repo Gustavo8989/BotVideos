@@ -7,7 +7,7 @@ import speech_recognition as sr
 import whisper
 import re 
 
-video = VideoFileClip("corte_final.mp4")
+video = VideoFileClip("")
 tempo_inicial = 1 
 duracao = 5
 legenda = []
@@ -19,7 +19,21 @@ with open('text_legend.txt','r',encoding='utf-8') as text:
 lista = text.split()
 letras = r'[^a-zA-Z\u00C0-\u017F]'
 
+apenas_letras = [] 
+parte_legenda = {}
+inicio = 0 
+fim = 13 
 
+for item in lista:
+    itens_filtrados = re.sub(letras,'',item)
+    apenas_letras.append(itens_filtrados) 
+    
+for c in range(len(apenas_letras)//13):
+    parte_legenda = {f"Partes{c}":apenas_letras[inicio:fim]}
+    inicio = fim 
+    fim += 13
+
+texto = parte_legenda
 
 sub = SubRipFile()
 for i,frase in enumerate(texto,start=1):
@@ -37,7 +51,7 @@ for texto in sub:
     txt_clip = (TextClip(
                 font=None,
                 text=texto.text,
-                color="Orange",
+                color="Black",
                 font_size = 25,
                 method='label')
                 ).with_position(("center")).with_start(texto.start.seconds).with_duration(texto.end.seconds - texto.start.seconds)
