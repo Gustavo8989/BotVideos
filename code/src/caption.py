@@ -7,7 +7,7 @@ import speech_recognition as sr
 import whisper
 import re 
 
-video = VideoFileClip("")
+video = VideoFileClip("corte_final.mp4")
 tempo_inicial = 1 
 duracao = 5
 legenda = []

@@ -14,7 +14,7 @@ def create_video():
     video = VideoFileClip("Minecraft Parkour Gameplay No Copyright.mp4")
     duracao = video.duration
     começo = 0 
-    audio_final = AudioFileClip("Principios da termodianmica.mp3")
+    audio_final = AudioFileClip("Principios da termodinamica.mp3")
     audio = audio_final.duration
     audio = math.ceil(audio)
     final = audio
