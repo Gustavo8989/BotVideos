@@ -23,4 +23,3 @@ for c in range(len(apenas_letras)//13):
     inicio = fim 
     fim += 13
     print(partes_legenda)
-

@@ -5,7 +5,7 @@ from pysrt import SubRipFile, SubRipItem, SubRipTime
 from pydub import AudioSegment
 import speech_recognition as sr
 import whisper
-import re 
+import re               
 
 video = VideoFileClip("corte_final.mp4")
 tempo_inicial = 1 
@@ -22,7 +22,7 @@ letras = r'[^a-zA-Z\u00C0-\u017F]'
 apenas_letras = [] 
 parte_legenda = {}
 inicio = 0 
-fim = 13 
+fim = 13  
 
 for item in lista:
     itens_filtrados = re.sub(letras,'',item)
@@ -34,6 +34,8 @@ for c in range(len(apenas_letras)//13):
     fim += 13
 
 texto = parte_legenda
+
+
 
 sub = SubRipFile()
 for i,frase in enumerate(texto,start=1):
@@ -48,7 +50,8 @@ for i,frase in enumerate(texto,start=1):
 
 
 for texto in sub:
-    txt_clip = (TextClip(
+    print(texto)
+''' txt_clip = (TextClip(
                 font=None,
                 text=texto.text,
                 color="Black",
@@ -58,7 +61,7 @@ for texto in sub:
 
 video_final = CompositeVideoClip([video,txt_clip])
 video_final.write_videofile("Teste videos com legenda.mp4",codec="libx264")
-
+'''
 #xlTUwuVtqUOkL6gVAQCvZGXMmhZ16shAZXFfFpGe
 
 
