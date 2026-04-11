@@ -8,9 +8,9 @@ import whisper
 import re               
 
 video = VideoFileClip("corte_final.mp4")
-tempo_inicial = 1 
+tempo_inicial = 1
+palavras_bloco = 8
 duracao = 5
-legenda = []
 duracao_video = video.duration
 
 with open('text_legend.txt','r',encoding='utf-8') as text:
@@ -20,48 +20,46 @@ lista = text.split()
 letras = r'[^a-zA-Z\u00C0-\u017F]'
 
 apenas_letras = [] 
-parte_legenda = {}
+texto = {}
 inicio = 0 
 fim = 13  
+tempo = tempo_inicial
+clips = [video]
 
 for item in lista:
     itens_filtrados = re.sub(letras,'',item)
     apenas_letras.append(itens_filtrados) 
-    
+
 for c in range(len(apenas_letras)//13):
     parte_legenda = {f"Partes{c}":apenas_letras[inicio:fim]}
-    inicio = fim 
-    fim += 13
-
-texto = parte_legenda
-
-
-
-sub = SubRipFile()
-for i,frase in enumerate(texto,start=1):
+    inicio_seg = tempo  
+    fim = tempo + duracao
+    texto = ' '.join(parte_legenda[f"Partes{c}"])
+    sub = SubRipFile()
     legend = SubRipItem(
-        index=i,
+        index=c,
         start=SubRipTime(0,0,tempo_inicial,0),
         end=SubRipTime(0,0,tempo_inicial+duracao,0),
-        text=frase
+        text=texto 
     )
-    sub.append(legend)
-    tempo_inicial += duracao
+    sub.append(legend)  
 
-
-for texto in sub:
-    print(texto)
-''' txt_clip = (TextClip(
+    txt_clip = (TextClip(
                 font=None,
-                text=texto.text,
+                text=texto,
                 color="Black",
                 font_size = 25,
                 method='label')
-                ).with_position(("center")).with_start(texto.start.seconds).with_duration(texto.end.seconds - texto.start.seconds)
+                ).with_position(("center")).with_start(inicio).with_end(duracao_video)
+    clips.append(txt_clip) 
+    tempo_inicial += duracao
+  
 
-video_final = CompositeVideoClip([video,txt_clip])
-video_final.write_videofile("Teste videos com legenda.mp4",codec="libx264")
-'''
+video_final = CompositeVideoClip(clips)
+video_final.write_videofile("Teste videos com legenda.mp4",codec="libx264",audio_codec="aac")
+print("Video salvo")
+
+
 #xlTUwuVtqUOkL6gVAQCvZGXMmhZ16shAZXFfFpGe
 
 

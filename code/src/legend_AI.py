@@ -22,4 +22,5 @@ for c in range(len(apenas_letras)//13):
     partes_legenda = {f"Parte{c}":apenas_letras[inicio:fim]}
     inicio = fim 
     fim += 13
-    print(partes_legenda)
+
+
